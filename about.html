@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Wastage - About</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Chart.js from CDN for the bar graph -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>About Food Wastage</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="causes.html">Causes</a>
+        
+            <a href="solutions.html">Solutions</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Food Wastage in India</h2>
+        
+        <!-- Styled Box for the India Report Section -->
+        <div class="styled-box">
+            <p>
+                Food wastage is a pressing issue in India, where an estimated 67 million tons of food is wasted annually, enough to feed the entire population of Bihar for a year. Food waste occurs at multiple stages in the supply chain: from production and harvesting to transportation and storage. In India, a significant portion of food wastage is attributed to inadequate infrastructure, inefficient supply chains, and limited cold storage facilities.
+            </p>
+            <p>
+                According to the Food and Agriculture Organization (FAO), about 40% of food produced in India is lost before it reaches consumers, mainly due to poor post-harvest handling and lack of processing facilities. This wastage has severe consequences on food security, economic stability, and environmental health.
+            </p>
+        </div>
+
+        <h3>Food Wastage in Other Countries</h3>
+        
+        <!-- Styled Box for the Global Comparison Table -->
+        <div class="styled-box">
+            <table>
+                <tr>
+                    <th>Country</th>
+                    <th>Annual Food Waste (in Million Tons)</th>
+                    <th>Waste per Capita (Kg)</th>
+                </tr>
+                <tr>
+                    <td>India</td>
+                    <td>67</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>United States</td>
+                    <td>63</td>
+                    <td>95</td>
+                </tr>
+                <tr>
+                    <td>China</td>
+                    <td>91</td>
+                    <td>64</td>
+                </tr>
+                <tr>
+                    <td>Brazil</td>
+                    <td>41</td>
+                    <td>39</td>
+                </tr>
+                <tr>
+                    <td>Japan</td>
+                    <td>18</td>
+                    <td>46</td>
+                </tr>
+            </table>
+        </div>
+
+        <h3>Food Waste Comparison: India vs. Other Countries</h3>
+        
+        <!-- Styled Box for the Bar Graph -->
+        <div class="styled-box">
+            <!-- Bar Graph Canvas -->
+            <canvas id="foodWasteChart" width="400" height="200"></canvas>
+        </div>
+
+        <!-- Explanation Section for the Bar Graph -->
+        <div class="styled-box">
+            <h4>Understanding the Bar Graph</h4>
+            <p>
+                The bar graph above provides a comparative view of food waste in several countries, highlighting the annual food waste produced (in million tons) by each. This graph emphasizes the significant amount of food wasted globally, with India, China, and the United States at the top.
+            </p>
+            <p>
+                While India and China have high levels of food wastage due to their large populations and complex supply chains, countries like the United States have a high waste per capita. For example, the United States has a smaller total population than China or India, yet its waste per person is one of the highest, reflecting consumer habits and food service practices.
+            </p>
+            <p>
+                By comparing these countries, the bar graph sheds light on how different factors such as population, infrastructure, and consumption patterns contribute to food wastage. This data underscores the need for targeted solutions in each country to address both systemic inefficiencies and consumer behaviors that lead to high food waste.
+            </p>
+        </div>
+    </main>
+    <footer>
+        <pre    <p>&copy; 2024 Food Wastage Awareness</p>
+    </footer>
+
+    <script>
+        // JavaScript for rendering the bar graph using Chart.js
+        const ctx = document.getElementById('foodWasteChart').getContext('2d');
+        const foodWasteChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['India', 'United States', 'China', 'Brazil', 'Japan'],
+                datasets: [{
+                    label: 'Food Waste (Million Tons)',
+                    data: [67, 63, 91, 41, 18],
+                    backgroundColor: [
+                        '#4CAF50', '#FF6B6B', '#FFA726', '#29B6F6', '#AB47BC'
+                    ],
+                    borderColor: [
+                        '#388E3C', '#E53935', '#FB8C00', '#039BE5', '#8E24AA'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
